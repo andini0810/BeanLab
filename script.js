@@ -63,3 +63,32 @@ document.getElementById("reservationForm").addEventListener("submit", function(e
         this.reset();
     }
 });
+
+// Dropdown Services
+  let isToggled = false;
+  const dropdown = document.getElementById("servicesDropdown");
+
+  function toggleDropdown() {
+    isToggled = !isToggled;
+    dropdown.classList.toggle("opacity-100", isToggled);
+    dropdown.classList.toggle("visible", isToggled);
+    dropdown.classList.toggle("pointer-events-auto", isToggled);
+    dropdown.classList.toggle("opacity-0", !isToggled);
+    dropdown.classList.toggle("invisible", !isToggled);
+    dropdown.classList.toggle("pointer-events-none", !isToggled);
+  }
+
+  function closeIfNotToggled() {
+    if (!isToggled) {
+      dropdown.classList.add("opacity-0", "invisible", "pointer-events-none");
+      dropdown.classList.remove("opacity-100", "visible", "pointer-events-auto");
+    }
+  }
+
+  window.addEventListener("click", (e) => {
+    if (!e.target.closest(".group")) {
+      isToggled = false;
+      closeIfNotToggled();
+    }
+  });
+

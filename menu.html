@@ -36,13 +36,13 @@
               <a href="menu.html" class="text-white bg-amber-700 px-3 py-2 rounded-md text-sm font-medium">Menu</a>
               <div class="relative group">
                 <button
-                  class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium inline-flex items-center">
+                  class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium inline-flex items-center transition-color duration-500">
                   Services
-                  <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">  
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
-                <div class="absolute hidden group-hover:block mt-1 bg-white text-gray-800 rounded shadow-lg z-50">
+                <div class="absolute mt-2 bg-white shadow-lg rounded-md py-2 w-40 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-200 z-10"   >
                   <a href="reserve.html" class="block px-4 py-2 hover:bg-gray-100">Pilih Meja</a>
                   <a href="reserve_session.html" class="block px-4 py-2 hover:bg-gray-100">Sesi Custom Kopi</a>
                 </div>

@@ -52,17 +52,24 @@
               <div class="flex space-x-4">
                 <a href="index.html" class="text-white bg-amber-700 px-3 py-2 rounded-md text-sm font-medium">Beranda</a>
                 <a href="menu.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Menu</a>
-                <div class="relative group" id="services-dropdown">
-                  <button class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium inline-flex items-center" aria-haspopup="true" aria-expanded="false">
+                  <!-- Container dropdown -->
+                  <div class="relative group inline-block" id="services-dropdown" onomouseleave="closeifnotToggled()">
+                  <!-- Tombol -->
+                  <button onclick="toggleDropdown()" class="bg-gray-800 text-white px-4 py-2 rounded-md text-sm font-medium flex items-center">
                     Services
-                    <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
-                  <div class="absolute hidden mt-1 bg-white text-gray-800 rounded shadow-lg z-50" id="services-dropdown-content">
+
+                  <!-- Dropdown menu (muncul saat hover) -->
+                  <div id="servicesDropdown"
+                        class="absolute mt-1 bg-white text-gray-800 rounded shadow-lg z-50 w-40 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-200 pointer-events-none group-hover:pointer-events-auto">
                     <a href="reserve.html" class="block px-4 py-2 hover:bg-gray-100">Pilih Meja</a>
                     <a href="reserve_session.html" class="block px-4 py-2 hover:bg-gray-100">Sesi Custom Kopi</a>
                   </div>
+                </div>
+
                 </div>
                 <a href="keranjang.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Keranjang</a>
               </div>
