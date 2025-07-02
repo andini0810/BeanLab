@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id" class="h-full bg-white">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sesi Custom Kopi - BeanLab Coffee</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="h-full">
+  <div class="min-h-full">
+
+    <!-- Header Informasi -->
+    <div class="bg-amber-900 text-white py-2 px-4">
+      <div class="mx-auto max-w-7xl flex justify-between items-center text-sm">
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span>Mon - Fri: 9:00 - 19:00 / Closed on Weekends</span>
+        </div>
+        <div class="hidden md:flex items-center gap-4">
+          <!-- Icons -->
+          <svg class="w-4 h-4 hover:text-amber-200 cursor-pointer" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M24 4.557c...z" />
+          </svg>
+          <!-- ...social icons truncated for brevity -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="bg-black/90 backdrop-blur-sm sticky top-0 z-50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between">
+          <div class="flex items-center">
+            <div class="text-white text-2xl font-bold">
+              <span class="text-amber-400">☕</span> BeanLab.
+            </div>
+            <div class="hidden md:block ml-10">
+              <div class="flex space-x-4">
+                <a href="index.html"
+                  class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Beranda</a>
+                <a href="menu.html"
+                  class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Menu</a>
+                <div class="relative group">
+                  <button
+                    class="text-white bg-amber-700 px-3 py-2 rounded-md text-sm font-medium inline-flex items-center">
+                    Services
+                    <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div class="absolute hidden group-hover:block mt-1 bg-white text-gray-800 rounded shadow-lg z-50">
+                    <a href="reserve.html" class="block px-4 py-2 hover:bg-gray-100">Pilih Meja</a>
+                    <a href="reserve_session.html" class="block px-4 py-2 hover:bg-gray-100">Sesi Custom Kopi</a>
+                  </div>
+                </div>
+                <a href="keranjang.html"
+                  class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Keranjang</a>
+              </div>
+            </div>
+          </div>
+          <div class="hidden md:block">
+            <a href="reserve.html"
+              class="bg-amber-700 hover:bg-amber-800 text-white px-6 py-2 rounded-lg font-semibold transition-colors">
+              BOOK A TABLE
+            </a>
+          </div>
+          <div class="md:hidden">
+            <button id="mobile-menu-button"
+              class="text-gray-400 hover:text-white hover:bg-gray-700 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="md:hidden hidden px-2 pt-2 pb-3 space-y-1">
+        <a href="index.html"
+          class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 text-base font-medium">Beranda</a>
+        <a href="menu.html"
+          class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 text-base font-medium">Menu</a>
+        <a href="reserve.html"
+          class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 text-base font-medium">Pilih Meja</a>
+        <a href="reserve_session.html"
+          class="block text-white bg-amber-700 rounded-md px-3 py-2 text-base font-medium">Sesi Custom Kopi</a>
+        <a href="keranjang.html"
+          class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 text-base font-medium">Keranjang</a>
+        <a href="reserve.html"
+          class="block w-full mt-4 bg-amber-700 hover:bg-amber-800 text-white px-6 py-2 rounded-lg font-semibold text-center">BOOK A TABLE</a>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+      <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <h1 class="text-3xl font-bold tracking-tight text-gray-900">Sesi Custom Kopi</h1>
+      </div>
+    </header>
+
+    <!-- Form Content -->
+    <main class="py-10">
+      <div class="mx-auto max-w-4xl px-4">
+        <p class="mb-6 text-gray-700">Selamat datang! Di sesi ini Anda bisa meracik kopi sesuai selera Anda dengan panduan barista kami.</p>
+
+        <form id="customSessionForm" class="bg-white p-6 rounded shadow">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block mb-1 text-sm font-medium">Pilih Jenis Biji Kopi</label>
+              <select class="w-full p-2 border rounded" required>
+                <option value="">-- Pilih --</option>
+                <option>Arabika</option>
+                <option>Robusta</option>
+                <option>Blend Specialty</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block mb-1 text-sm font-medium">Metode Seduh</label>
+              <select class="w-full p-2 border rounded" required>
+                <option value="">-- Pilih --</option>
+                <option>V60</option>
+                <option>French Press</option>
+                <option>Syphon</option>
+                <option>Espresso</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block mb-1 text-sm font-medium">Tingkat Kekasaran Gilingan</label>
+              <select class="w-full p-2 border rounded" required>
+                <option value="Kasar">Kasar</option>
+                <option value="Sedang">Sedang</option>
+                <option value="Halus">Halus</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block mb-1 text-sm font-medium">Tingkat Keasaman</label>
+              <select class="w-full p-2 border rounded" required>
+                <option value="Rendah">Rendah</option>
+                <option value="Sedang">Sedang</option>
+                <option value="Tinggi">Tinggi</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mt-6">
+            <label class="block mb-1 text-sm font-medium">Catatan Tambahan</label>
+            <textarea class="w-full p-2 border rounded" rows="3" placeholder="Contoh: Saya ingin aroma fruity lebih dominan..."></textarea>
+          </div>
+
+          <div class="flex justify-end mt-6">
+            <button type="submit" class="px-4 py-2 bg-amber-700 text-white rounded hover:bg-amber-800">Kirim Permintaan</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-amber-900 text-white py-6 mt-10">
+      <div class="max-w-7xl mx-auto px-4 text-center">
+        <p>Email: beanlab@coffee.id | Instagram: @beanlabcoffee</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById('mobile-menu-button').addEventListener('click', function () {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    document.getElementById("customSessionForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Terima kasih! Permintaan sesi custom kopi Anda telah dikirim.");
+      this.reset();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id" class="h-full">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu - BeanLab Coffee</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="h-full bg-white">
+  <div class="min-h-full">
+    <div class="bg-amber-900 text-white py-2 px-4">
+    <div class="mx-auto max-w-7xl flex justify-between items-center text-sm">
+      <div class="flex items-center gap-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span>Mon - Fri: 9:00 - 19:00/ Closed on Weekends</span>
+      </div>
+    </div>
+  </div>
+  <!-- Navbar -->
+  <nav class="bg-black/90 backdrop-blur-sm sticky top-0 z-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <div class="flex items-center">
+          <div class="text-white text-2xl font-bold">
+            <span class="text-amber-400">☕</span> BeanLab.
+          </div>
+          <div class="hidden md:block ml-10">
+            <div class="flex space-x-4">
+              <a href="index.html"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Beranda</a>
+              <a href="menu.html" class="text-white bg-amber-700 px-3 py-2 rounded-md text-sm font-medium">Menu</a>
+              <div class="relative group">
+                <button
+                  class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium inline-flex items-center">
+                  Services
+                  <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div class="absolute hidden group-hover:block mt-1 bg-white text-gray-800 rounded shadow-lg z-50">
+                  <a href="reserve.html" class="block px-4 py-2 hover:bg-gray-100">Pilih Meja</a>
+                  <a href="reserve_session.html" class="block px-4 py-2 hover:bg-gray-100">Sesi Custom Kopi</a>
+                </div>
+              </div>
+              <a href="keranjang.html"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Keranjang</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hidden md:block">
+          <a href="reserve.html"
+            class="bg-amber-700 hover:bg-amber-800 text-white px-6 py-2 rounded-lg font-semibold transition-colors">
+            BOOK A TABLE
+          </a>
+        </div>
+
+        <div class="md:hidden">
+          <button id="mobile-menu-button"
+            class="text-gray-400 hover:text-white hover:bg-gray-700 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden px-2 pt-2 pb-3 space-y-1">
+      <a href="index.html"
+        class="block text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-base font-medium">Beranda</a>
+      <a href="menu.html" class="block text-white bg-amber-700 rounded-md px-3 py-2 text-base font-medium">Menu</a>
+      <a href="reserve.html"
+        class="block text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-base font-medium">Pilih
+        Meja</a>
+      <a href="reserve_session.html"
+        class="block text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-base font-medium">Sesi
+        Custom Kopi</a>
+      <a href="keranjang.html"
+        class="block text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-base font-medium">Keranjang</a>
+      <a href="reserve.html"
+        class="block w-full mt-4 bg-amber-700 hover:bg-amber-800 text-white px-6 py-2 rounded-lg font-semibold text-center">BOOK
+        A TABLE</a>
+    </div>
+  </nav>
+
+  <header class="bg-white shadow-sm">
+    <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+      <h1 class="text-3xl font-bold tracking-tight text-gray-900">Menu BeanLab Coffee</h1>  
+    </div>
+  </header>
+
+  <main>
+    <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+      <section>
+        <h2 class="text-xl font-semibold mb-4">Menu Kami</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="menuItems">
+          <!-- Menu akan dimuat oleh JavaScript -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="bg-amber-900 text-white py-6 mt-10">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p>Email: beanlab@coffee.id | Instagram: @beanlabcoffee</p>
+    </div>
+  </footer>
+  </div>
+
+  <script>
+    document.getElementById('mobile-menu-button').addEventListener('click', function () {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+
+    const menuData = [
+      { name: "Espresso", price: 18000 },
+      { name: "Cappuccino", price: 22000 },
+      { name: "Latte", price: 23000 },
+      { name: "Manual Brew", price: 25000 },
+      { name: "Signature Coffee", price: 27000 }
+    ];
+
+    const menuContainer = document.getElementById("menuItems");
+
+    menuData.forEach(item => {
+      const div = document.createElement("div");
+      div.className = "bg-white rounded-lg shadow p-4 flex flex-col items-center text-center";
+      div.innerHTML = `
+        <h4 class="text-lg font-bold mb-1">${item.name}</h4>
+        <p class="mb-2">Rp${item.price.toLocaleString()}</p>
+        <button onclick="addToCart('${item.name}', ${item.price})" class="bg-amber-700 text-white px-4 py-2 rounded hover:bg-amber-800">Tambah ke Keranjang</button>
+      `;
+      menuContainer.appendChild(div);
+    });
+
+    function addToCart(name, price) {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({ name, price });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(`${name} ditambahkan ke keranjang!`);
+    }
+  </script>
+</body>
+
+</html>

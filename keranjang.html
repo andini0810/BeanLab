@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id" class="h-full">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keranjang - BeanLab</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="h-full bg-white">
+  <div class="min-h-full">
+    <!-- Header Bar -->
+    <div class="bg-amber-900 text-white py-2 px-4">
+      <div class="mx-auto max-w-7xl flex justify-between items-center text-sm">
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span>Mon - Fri: 9:00 - 19:00/ Closed on Weekends</span>
+        </div>
+        <div class="hidden md:flex items-center gap-4">
+          <!-- Social icons can go here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="bg-black/90 backdrop-blur-sm sticky top-0 z-50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between">
+          <div class="flex items-center">
+            <div class="text-white text-2xl font-bold">
+              <span class="text-amber-400">☕</span> BeanLab.
+            </div>
+            <div class="hidden md:block ml-10">
+              <div class="flex space-x-4">
+                <a href="index.html"
+                  class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Beranda</a>
+                <a href="menu.html"
+                  class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Menu</a>
+                <div class="relative group">
+                  <button
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium inline-flex items-center">
+                    Services
+                    <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div class="absolute hidden group-hover:block mt-1 bg-white text-gray-800 rounded shadow-lg z-50">
+                    <a href="reserve.html" class="block px-4 py-2 hover:bg-gray-100">Pilih Meja</a>
+                    <a href="reserve_session.html" class="block px-4 py-2 hover:bg-gray-100">Sesi Custom Kopi</a>
+                  </div>
+                </div>
+                <a href="keranjang.html"
+                  class="text-white bg-amber-700 px-3 py-2 rounded-md text-sm font-medium">Keranjang</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="hidden md:block">
+            <a href="reserve.html"
+              class="bg-amber-700 hover:bg-amber-800 text-white px-6 py-2 rounded-lg font-semibold transition-colors">
+              BOOK A TABLE
+            </a>
+          </div>
+
+          <div class="md:hidden">
+            <button id="mobile-menu-button"
+              class="text-gray-400 hover:text-white hover:bg-gray-700 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="md:hidden hidden px-2 pt-2 pb-3 space-y-1">
+        <a href="index.html"
+          class="block text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-base font-medium">Beranda</a>
+        <a href="menu.html"
+          class="block text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-base font-medium">Menu</a>
+        <a href="reserve.html"
+          class="block text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-base font-medium">Pilih Meja</a>
+        <a href="reserve_session.html"
+          class="block text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-base font-medium">Sesi Custom Kopi</a>
+        <a href="keranjang.html"
+          class="block text-white bg-amber-700 rounded-md px-3 py-2 text-base font-medium">Keranjang</a>
+        <a href="reserve.html"
+          class="block w-full mt-4 bg-amber-700 hover:bg-amber-800 text-white px-6 py-2 rounded-lg font-semibold text-center">BOOK
+          A TABLE</a>
+      </div>
+    </nav>
+
+    <header class="bg-white shadow-sm">
+      <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <h1 class="text-3xl font-bold tracking-tight text-gray-900">Keranjang Anda</h1>
+      </div>
+    </header>
+
+    <main>
+      <div class="mx-auto max-w-3xl px-4 py-6 sm:px-6 lg:px-8">
+        <section>
+          <h2 class="text-xl font-semibold mb-4">Daftar Pesanan</h2>
+          <ul id="cart" class="space-y-2 mb-4"></ul>
+          <p class="text-lg font-semibold">Total: <span id="total">Rp0</span></p>
+          <button onclick="checkout()"
+            class="mt-4 bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded">Pesan & Bayar di Tempat</button>
+        </section>
+      </div>
+    </main>
+
+    <footer class="bg-amber-900 text-white py-6 mt-10">
+      <div class="max-w-7xl mx-auto px-4 text-center">
+        <p>Email: beanlab@coffee.id | Instagram: @beanlabcoffee</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Toggle Mobile Navbar
+    document.getElementById('mobile-menu-button').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    const cartList = document.getElementById("cart");
+    const totalElement = document.getElementById("total");
+
+    function loadCart() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cartList.innerHTML = "";
+      let total = 0;
+
+      cart.forEach((item, index) => {
+        const li = document.createElement("li");
+        li.className = "flex justify-between items-center bg-white p-3 rounded shadow";
+        li.innerHTML = `
+          <span>${item.name} - Rp${item.price.toLocaleString()}</span>
+          <button onclick="removeItem(${index})" class="text-red-600 hover:text-red-800">Hapus</button>
+        `;
+        cartList.appendChild(li);
+        total += item.price;
+      });
+
+      totalElement.textContent = `Rp${total.toLocaleString()}`;
+    }
+
+    function removeItem(index) {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      loadCart();
+    }
+
+    function checkout() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      if (cart.length === 0) {
+        alert("Keranjang masih kosong!");
+        return;
+      }
+      alert(`Pesanan Anda sebesar Rp${cart.reduce((t, i) => t + i.price, 0).toLocaleString()} telah diterima. Silakan bayar di tempat.`);
+      localStorage.removeItem("cart");
+      loadCart();
+    }
+
+    loadCart();
+  </script>
+</body>
+
+</html>
